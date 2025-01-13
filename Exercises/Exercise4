@@ -1,5 +1,3 @@
 cars = 100
 
 print(f"There are {cars} cars available")
-
-# this is pretty crazy
