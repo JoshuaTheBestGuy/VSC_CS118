@@ -1,3 +1,8 @@
+"""
+This is an example of how to program something that only accepts numbers
+Authur: Joshua Hendrickson, with the help of Copilot
+"""
+
 """ x = input("Enter the first number: ")
 
 try:
@@ -29,5 +34,3 @@ except ValueError:
 s = int(x) + int(y)
 
 print(f"The sum of {x} and {y} is {s}") """ 
-
-### ^ is an example of how to program something that only accepts numbers
