@@ -34,3 +34,26 @@ except ValueError:
 s = int(x) + int(y)
 
 print(f"The sum of {x} and {y} is {s}") """
+
+
+"""
+This is an example of how to program a rectangular prism.
+Authur: Joshua Hendrickson with the help of Copilot. 
+"""
+
+"""
+print("This program will calculate the properties of a rectangular prism.")
+sw = input("Enter the width of the prism: ")
+sh = input("Enter the height of the prism: ")
+sl = input("Enter the length of the prism: ")
+
+width = float(sw)
+height = float(sh)
+length = float(sl)
+
+volume = width * height * length
+sa = 2 * width * height + 4 * length * height
+
+print(f"The volume of the prism is {volume}")
+print(f"The surface area of the prism is {sa}")
+"""
