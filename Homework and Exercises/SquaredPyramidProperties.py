@@ -1,5 +1,5 @@
 """
-This is an example of how to program a program that calculates the properties of a squared pyramid.
+This is a program that calculates the properties of a squared pyramid.
 Authur: Joshua Hendrickson. 
 """
 
