@@ -57,3 +57,27 @@ sa = 2 * width * height + 4 * length * height
 print(f"The volume of the prism is {volume}")
 print(f"The surface area of the prism is {sa}")
 """
+
+"""
+English to Pig Latin
+"""
+
+"""
+
+from sys import argv
+
+# s = input("Please enter an English sentence: ")
+result = ""
+words = argv[1:]
+for word in words:
+    word = word + "-"
+    if word[0] in "AEIOUaeiou":
+        word += "yay"
+    else:
+        word += word[0]
+        word += "a"
+        word = word[1:]
+    result += word + " "
+print(result)
+    
+"""
