@@ -3,7 +3,9 @@ This is an example of how to program something that only accepts numbers
 Authur: Joshua Hendrickson, with the help of Copilot
 """
 
-""" x = input("Enter the first number: ")
+"""
+
+x = input("Enter the first number: ")
 
 try:
     x = int(x)
@@ -33,7 +35,9 @@ except ValueError:
 
 s = int(x) + int(y)
 
-print(f"The sum of {x} and {y} is {s}") """
+print(f"The sum of {x} and {y} is {s}")
+
+"""
 
 
 """
@@ -80,4 +84,24 @@ for word in words:
     result += word + " "
 print(result)
     
+"""
+
+
+"""
+Multi-Way If Statements
+"""
+
+"""
+
+number = int(input("Enter the numeric grade: "))
+if number > 89:
+    letter = 'A'
+elif number > 79:
+    letter = 'B'
+elif number > 69:
+    letter = 'C'
+else:
+    letter = 'F'
+print(f"The letter grade is {letter}.")
+
 """
