@@ -107,3 +107,24 @@ print(f"The letter grade is {letter}.")
 """
 
 
+"""
+Super Prime Checker
+"""
+
+"""
+while True:
+    k = int(input("What number do you want me to check for prime?: "))
+    if k <= 1:
+        break
+    if k == 2:
+        print(f"{k} is a prime number!")
+    elif k % 2 == 0:
+        print(f"{k} is NOT prime, it's divisbile by 2.")
+    for i in range (3,int(1 + k ** 0.5),2): # 3, 5, 7, ... k-1
+        print(i)
+        if k % i == 0:
+            print(f"{k} is NOT prime, it's divisible by {i}.")
+            break
+    else:
+        print(f"{k} is a prime number!")
+"""
