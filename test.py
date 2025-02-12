@@ -128,3 +128,10 @@ while True:
     else:
         print(f"{k} is a prime number!")
 """
+
+
+"""
+while True:
+    k = input("Enter a number: ")
+    print(k.isnumeric())
+"""
