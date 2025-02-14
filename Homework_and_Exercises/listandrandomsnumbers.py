@@ -68,3 +68,4 @@ while True:
         previous_number = random_result
         ran_counter += 1
         continue
+    
