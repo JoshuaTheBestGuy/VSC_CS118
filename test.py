@@ -136,4 +136,35 @@ while True:
     print(k.isnumeric())
 """
 
+"""
+my_string = "12,34,22,11,45656,12121,11!"
+print(my_string.split(','))
+"""
 
+
+"""
+Reading a good book
+"""
+
+
+"""
+with open("treasure.txt") as my_book:
+    text = my_book.read()
+
+print(len(text))
+lc_book = text.lower()
+print(text.count("rum"))
+print(lc_book.count("rum"))
+"""
+
+
+x = input("Please enter a number: ")
+
+while True:
+    if x.isnumeric() == True:
+        break
+    else:
+        print(f"{x} is not a valid number!")
+        x = input("Please enter a number: ")
+
+print(x)

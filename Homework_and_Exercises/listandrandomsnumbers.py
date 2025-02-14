@@ -12,14 +12,10 @@ x = input("Enter the first number, or 'q' to quit: ")
 if x == "q":
     quit
 else:
-    try:
-        x = int(x)
-    except ValueError:
-        print("You did not enter a number.")
-        while True:
-            x = input("Enter another number: ")
-            try:
-                x = int(x)
-                break
-            except ValueError:
-                print("You did not enter a number.")
+    while True:
+        if x.isnumeric() == True:
+            break
+        else:
+            print(f"{x} is not a valid number!")
+            x = input("Please enter a number: ")
+
