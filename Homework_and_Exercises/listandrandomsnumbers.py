@@ -1,5 +1,5 @@
 """
-This program will generate random numbers from 1 to n, until all intergers 1 to n have been generated at least once. 
+This program will generate random numbers from 1 to n, until all integers 1 to n have been generated at least once. 
 Written by Joshua Hendrickson with the help of Copilot.
 """
 
@@ -9,7 +9,7 @@ print("Creating all integers from 1 to n (inclusive) randomly.")
 
 x = input("Enter the first number, or 'q' to quit: ") # asks the user for their number
 
-# lines 13 through 23 check if the user has entered a valid number, if they have not, the loop will contiune until they have. Or the program will quit if the user enters 'q'.
+# lines 13 through 23 check if the user has entered a valid number, if they have not, the loop will continue until they have. Or the program will quit if the user enters 'q'.
 if x == "q":
     quit()
 else:
@@ -17,6 +17,7 @@ else:
         if x.isnumeric() == True:
             x = int(x)
             check_list_digit = x
+            check_list_digit = int(check_list_digit)
             break
         else:
             print(f"{x} is not a valid number!")
@@ -31,9 +32,8 @@ previous_number = None
 current_streak = 0
 max_streak = 0
 
-# this while loop is fundamental to the sucesful use of the program. It will create a list of all the digits from 1 to x, serving as a "check list" that the program can use to check if the list that is used to store the random numbers includes all of the numbers from 1 to x. 
+# this while loop is fundamental to the successful use of the program. It will create a list of all the digits from 1 to x, serving as a "check list" that the program can use to check if the list that is used to store the random numbers includes all of the numbers from 1 to x. 
 while True:
-    check_list_digit = int(check_list_digit)
     check_list.append(check_list_digit)
     check_list_digit -= 1
     if check_list[-1] == 1:
@@ -58,7 +58,7 @@ while True:
 
     if all(item in list for item in check_list) == True:
         print() # creating space between the lines, purely a style choice
-        print(f"The function 'ranint' was called {ran_counter} times!")
+        print(f"The function 'randint' was called {ran_counter} times!")
         print(f"The last number called was {list[-1]}!")
         print(f"The most frequent number was {most_frequent_number} with a max streak of {max_streak}!")
         print(list)
