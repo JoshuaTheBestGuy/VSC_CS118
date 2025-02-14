@@ -158,6 +158,11 @@ print(lc_book.count("rum"))
 """
 
 
+"""
+Is the number the user inputed a valid number? If not, loop until a correct number has been inputed. 
+"""
+
+"""
 x = input("Please enter a number: ")
 
 while True:
@@ -168,3 +173,4 @@ while True:
         x = input("Please enter a number: ")
 
 print(x)
+"""
