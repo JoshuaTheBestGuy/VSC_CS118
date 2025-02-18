@@ -58,7 +58,7 @@ while True:
 
     if all(item in list for item in check_list) == True:
         print() # creating space between the lines, purely a style choice
-        print(f"The function 'randint' was called {ran_counter} times!")
+        print(f"Creating a random sequence of all integers 1 through {x} ~~ The function 'randint' was called {ran_counter} times!")
         print(f"The last number called was {list[-1]}!")
         print(f"The most frequent number was {most_frequent_number} with a max streak of {max_streak}!")
         print(list)
