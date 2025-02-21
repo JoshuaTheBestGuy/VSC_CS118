@@ -176,3 +176,102 @@ print(x)
 """
 
 
+"""
+Roll a dice 10 times, store those results in a list
+"""
+
+"""
+from random import randint
+
+roll_count = 0
+value_list = []
+
+while True:
+    if roll_count == 10:
+        print(value_list)
+        break
+    else: 
+        value_list.append(randint(1,6))
+        roll_count += 1
+"""
+
+
+"""
+Roll a dice until all values 1 to 6 have been rolled at least once
+"""
+
+"""
+from random import randint
+
+value_list = []
+run_count = 0
+total_sum = 0
+
+while len(value_list) != 6:
+    x = randint(1,6)
+    total_sum += x
+    run_count += 1
+    if x not in value_list:
+        value_list.append(x)
+        x = 0
+print(value_list)
+print(f"randint was run {run_count} times!")
+print(f"The sum of all the generated numbers was {total_sum}!")
+"""
+
+
+"""
+Lists, lists, and more lists!
+"""
+
+"""
+main_street = ["Smith", "Johnson", "Garcia", "Miller", "Lopez"]
+
+for name in main_street:
+    print(name, end="")
+print()
+for idx in range(0, len(main_street),2): # 0, 2, 4
+    print(main_street[idx], end=", ")
+print()
+for idx in range(len(main_street)): # 0, 1, 2, 3, 4
+    print(f"{main_street[idx]} ({idx + 1} Main Street), ", end="")
+"""
+
+
+"""
+More lists! Neighboor wars?
+"""
+
+"""
+main_street = ["Smith", "Johnson", "Garcia", "Miller", "Lopez"]
+
+i = main_street.index("Johnson")
+j = main_street.index("Miller")
+main_street[i],main_street[j] = main_street[j], main_street[i]
+print(main_street)
+"""
+
+
+"""
+Separate positive and negative numbers with lists
+"""
+
+"""
+from random import randint
+
+value_list = []
+positive_list = []
+negative_list = []
+
+while len(value_list) != 9:
+    x = randint(-10,10)
+    if x not in value_list:
+        value_list.append(x)
+    if x > 0:
+        positive_list.append(x)
+    if x < 0:
+        negative_list.append(x)
+print(value_list)
+print(positive_list)
+print(negative_list)
+"""
