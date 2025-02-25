@@ -10,18 +10,17 @@ print("Creating all integers from 1 to n (inclusive) randomly.")
 x = input("Enter the first number, or 'q' to quit: ") # asks the user for their number
 
 # lines 13 through 23 check if the user has entered a valid number, if they have not, the loop will continue until they have. Or the program will quit if the user enters 'q'.
-if x == "q":
-    quit()
-else:
-    while True:
-        if x.isnumeric() == True:
-            x = int(x)
-            check_list_digit = x
-            check_list_digit = int(check_list_digit)
-            break
-        else:
-            print(f"{x} is not a valid number!")
-            x = input("Please enter a number: ")
+while True:
+    if x == "q":
+        quit()
+    elif x.isnumeric() == True:
+        x = int(x)
+        check_list_digit = x
+        check_list_digit = int(check_list_digit)
+        break
+    else:
+        print(f"{x} is not a valid number!")
+        x = input("Please enter a number or 'q' to exit: ")
 
 # needed vars
 list = list()
