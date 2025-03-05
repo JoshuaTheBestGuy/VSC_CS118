@@ -277,3 +277,50 @@ print(negative_list)
 """
 
 
+"""
+Messing with text files
+"""
+
+"""
+from random import randint
+
+lorn = []
+for i in range(500):
+    lorn.append(randint(1,500))
+
+with open("numbers.txt","w") as f:
+    for r in lorn:
+        f.write(f"{r}\n")
+
+with open("numbers.txt") as f:
+    content = f.read()
+
+l2 = []
+for s in content.split():
+    l2.append(int(s))
+
+assert lorn == l2
+"""
+
+"""
+Still messing with text files
+"""
+
+"""
+with open("treasure.txt") as f:
+    content = f.read()
+
+words = content.split()
+print(words)
+
+doc_string = '""" Still messing with text files """\n\n'
+
+with open("test.py") as f: 
+    code = f.read()
+print(code)
+
+with open("test.py", "w") as f:
+    f.write(doc_string)
+    f.write(code)
+print("Done.")
+"""
