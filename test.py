@@ -313,7 +313,7 @@ with open("treasure.txt") as f:
 words = content.split()
 print(words)
 
-doc_string = '""" Still messing with text files """\n\n'
+doc_string = not here due to errors
 
 with open("test.py") as f: 
     code = f.read()
@@ -323,4 +323,31 @@ with open("test.py", "w") as f:
     f.write(doc_string)
     f.write(code)
 print("Done.")
+"""
+
+
+"""
+Rolling a dice... again
+"""
+
+"""
+from random import randint
+
+my_set = set()
+counter = 0
+max_roll_counter = 0
+attempts = 0
+
+while max_roll_counter != 6:
+    while len(my_set) < 6:
+        dice = randint(1,6)
+        counter += 1
+        my_set.add(dice)
+        print(f"You rolled {dice}! Size of the set is {len(my_set)}.")
+    print(f"Needed {counter} rolls.")
+    max_roll_counter = counter
+    counter = 0
+    my_set = set()
+    attempts += 1
+print(f"It took {attempts} attempts to get a perfect combination of rolls.")
 """
