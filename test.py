@@ -368,9 +368,9 @@ max_roll_counter = 0
 attempts = 1
 highest_counter = 0
 
-while max_roll_counter != 10:
-    while len(my_list) < 10:
-        dice = randint(1,10)
+while max_roll_counter != 7:
+    while len(my_list) < 7:
+        dice = randint(1,7)
         if dice == current_counter:
             current_counter += 1
             my_list.append(dice)
