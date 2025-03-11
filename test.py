@@ -387,3 +387,6 @@ while max_roll_counter != 7:
 end_time = time.perf_counter()
 elapsed_time = end_time - start_time
 print(f"It took {attempts} attempts to get a perfect combination of rolls. It took {elapsed_time:.4f} seconds.")
+
+
+
