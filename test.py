@@ -373,3 +373,33 @@ print(tally)
 for k,v in tally.items():
     print(f"{k} -> {v}")
 """
+
+
+"""
+Most frequent word in Treasure Island
+"""
+
+"""
+from string import punctuation
+
+punctuation += '\n'
+clean_text = ""
+
+with open("treasure.txt") as file:
+    book = file.read()
+
+for c in book:
+    clean_text += c.lower() if c not in punctuation else " "
+words = clean_text.split()
+
+tally = {}
+for word in words:
+    tally[word] = tally.get(word, 0) + 1
+
+frequencies = list(tally.values())
+frequencies.sort()
+max_frequency = frequencies[-1]
+for k,v in tally.items():
+    if v == max_frequency:
+        print(f"Max Freq. used word is '{k}'... used {v} amount of times.")
+"""

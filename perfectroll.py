@@ -13,18 +13,18 @@ max_roll_counter = 0
 attempts = 1
 highest_counter = 0
 
-while max_roll_counter != 8:
-    while len(my_list) < 8:
-        dice = randint(1,8)
+while max_roll_counter != 10:
+    while len(my_list) < 10:
+        dice = randint(1,10)
         if dice == current_counter:
             current_counter += 1
             my_list.append(dice)
             max_roll_counter += 1
-            print(f"You rolled {dice}! Size of the set is {len(my_list)}.")
+            #print(f"You rolled {dice}! Size of the set is {len(my_list)}.")
         else:
             if max_roll_counter > highest_counter:
                 highest_counter = max_roll_counter
-            print(f"You rolled {dice}! That is not a perfect combination! You got up to {max_roll_counter}... so close.. or not? The highest you got to was {highest_counter}.")
+            #print(f"You rolled {dice}! That is not a perfect combination! You got up to {max_roll_counter}... so close.. or not? The highest you got to was {highest_counter}.")
             attempts += 1
             my_list = list()
             current_counter = 1
