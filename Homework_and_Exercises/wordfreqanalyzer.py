@@ -23,7 +23,11 @@ while True:
 try:
     with open(text_file) as file:
         book = file.read()
-    
+
+except OSError as x:
+    print(x)
+
+else:
     for c in book:
         clean_text += c.lower() if c not in punctuation else " "
     words = clean_text.split()
@@ -47,6 +51,3 @@ try:
                 print(f"No words appeared in '{text_file}', {user_input} time(s)... sorry!")
         else:
             print(f"{user_input} is not a valid number!")
-
-except OSError as x:
-    print(x)
