@@ -1,6 +1,6 @@
 """
 This is an example of how to program something that only accepts numbers
-Authur: Joshua Hendrickson, with the help of Copilot
+Arthur: Joshua Hendrickson, with the help of Copilot
 """
 
 """
@@ -42,7 +42,7 @@ print(f"The sum of {x} and {y} is {s}")
 
 """
 This is an example of how to program a rectangular prism.
-Authur: Joshua Hendrickson with the help of Copilot. 
+Arthur: Joshua Hendrickson with the help of Copilot. 
 """
 
 """
@@ -119,7 +119,7 @@ while True:
     if k == 2:
         print(f"{k} is a prime number!")
     elif k % 2 == 0:
-        print(f"{k} is NOT prime, it's divisbile by 2.")
+        print(f"{k} is NOT prime, it's divisible by 2.")
     for i in range (3,int(1 + k ** 0.5),2): # 3, 5, 7, ... k-1
         print(i)
         if k % i == 0:
@@ -159,7 +159,7 @@ print(lc_book.count("rum"))
 
 
 """
-Is the number the user inputed a valid number? If not, loop until a valid number has been inputed. 
+Is the number the user inputted a valid number? If not, loop until a valid number has been inputted. 
 """
 
 """
@@ -239,7 +239,7 @@ for idx in range(len(main_street)): # 0, 1, 2, 3, 4
 
 
 """
-More lists! Neighboor wars?
+More lists! Neighbor wars?
 """
 
 """
