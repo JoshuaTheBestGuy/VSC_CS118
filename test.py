@@ -357,7 +357,7 @@ print(f"It took {attempts} attempts to get a perfect combination of rolls.")
 Are dice truly perfect? Dictionaries demo
 """
 
-"""
+
 from random import randint
 
 tally = {}
@@ -365,14 +365,17 @@ tally = {}
 for i in range(1,7): #1, 2, .. 6
     tally[i] = 0
 
-for i in range(6000):
+for i in range(1000):
     dice = randint(1,6)
     tally[dice] = tally[dice] + 1
 print(tally)
 
+m = max(tally.values())
+
 for k,v in tally.items():
-    print(f"{k} -> {v}")
-"""
+    if v == m:
+        print(f"'{k}' was rolled '{v}' times!")
+
 
 
 """
@@ -403,3 +406,5 @@ for k,v in tally.items():
     if v == max_frequency:
         print(f"Max Freq. used word is '{k}'... used {v} amount of times.")
 """
+
+
