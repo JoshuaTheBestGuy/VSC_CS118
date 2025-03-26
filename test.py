@@ -338,9 +338,9 @@ counter = 0
 max_roll_counter = 0
 attempts = 0
 
-while max_roll_counter != 10:
-    while len(my_set) < 10:
-        dice = randint(1,10)
+while max_roll_counter != 6:
+    while len(my_set) < 6:
+        dice = randint(1,6)
         counter += 1
         my_set.add(dice)
         print(f"You rolled {dice}! Size of the set is {len(my_set)}.")
@@ -357,7 +357,7 @@ print(f"It took {attempts} attempts to get a perfect combination of rolls.")
 Are dice truly perfect? Dictionaries demo
 """
 
-
+"""
 from random import randint
 
 tally = {}
@@ -375,7 +375,7 @@ m = max(tally.values())
 for k,v in tally.items():
     if v == m:
         print(f"'{k}' was rolled '{v}' times!")
-
+"""
 
 
 """
@@ -408,3 +408,38 @@ for k,v in tally.items():
 """
 
 
+"""
+Sum of every other item in a random number sorted representation
+"""
+
+"""
+from random import randint
+
+random_list = []
+n = 1000
+k = 6
+
+for _ in range(n):
+    random_list.append(randint(1,k))
+random_list.sort()
+
+print(sum(random_list[::2]))
+"""
+
+
+"""
+Rolling a dice... again.. and again
+"""
+
+"""
+from random import randint
+
+my_set = set()
+counter = 0
+
+while len(my_set) < 6:
+    dice = randint(1,6)
+    counter += 1
+    my_set.add(dice)
+print(f"Needed '{counter}' rolls.")
+"""
