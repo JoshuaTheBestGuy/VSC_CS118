@@ -2,7 +2,6 @@
 Rolling a dice... again... and again?
 """
 
-
 from random import randint
 import time
 
@@ -13,18 +12,44 @@ max_roll_counter = 0
 attempts = 1
 highest_counter = 0
 
-while max_roll_counter != 10:
-    while len(my_list) < 10:
-        dice = randint(1,10)
+number = input("How high should we go today?: ")
+do_print = input("Should we include print statements on every attempt? (not recommended for high input!) Please select True or False: ")
+do_print = do_print.lower()
+
+while True:
+    if number.isnumeric() == True:
+        number = int(number)
+        break
+    else:
+        print(f"{number} is not a valid number!")
+        number = input("Please enter a number: ")
+
+while True:
+    if do_print == "true":
+        do_print = True
+        break
+    elif do_print == "false":
+        do_print == False
+        break
+    else: 
+        print(f"{do_print} is not a valid boolean statement.")
+        do_print = input("Please select True or False: (not recommended for high input!): ")
+        do_print = do_print.lower()
+
+while max_roll_counter != number:
+    while len(my_list) < number:
+        dice = randint(1,number)
         if dice == current_counter:
             current_counter += 1
             my_list.append(dice)
             max_roll_counter += 1
-            #print(f"You rolled {dice}! Size of the set is {len(my_list)}.")
+            if do_print is True:
+                print(f"You rolled {dice}! Size of the set is {len(my_list)}.")
         else:
             if max_roll_counter > highest_counter:
                 highest_counter = max_roll_counter
-            #print(f"You rolled {dice}! That is not a perfect combination! You got up to {max_roll_counter}... so close.. or not? The highest you got to was {highest_counter}.")
+            if do_print is True:
+                print(f"You rolled {dice}! That is not a perfect combination! You got up to {max_roll_counter}... so close.. or not? The highest you got to was {highest_counter}.")
             attempts += 1
             my_list = list()
             current_counter = 1

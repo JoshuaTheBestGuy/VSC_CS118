@@ -443,3 +443,13 @@ while len(my_set) < 6:
     my_set.add(dice)
 print(f"Needed '{counter}' rolls.")
 """
+
+
+"""
+Function time!
+"""
+
+from functions import is_odd
+
+x = int(input("Enter a number: "))
+print(is_odd(x))
