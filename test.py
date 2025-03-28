@@ -449,7 +449,8 @@ print(f"Needed '{counter}' rolls.")
 Function time!
 """
 
-from functions import is_odd
+from functions import isnumber
 
-x = int(input("Enter a number: "))
-print(is_odd(x))
+x = input("Enter a number: ")
+isnumber(x)
+print(x)
