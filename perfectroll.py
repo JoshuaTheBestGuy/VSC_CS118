@@ -4,6 +4,11 @@ Rolling a dice... again... and again?
 
 from random import randint
 import time
+import matplotlib.pyplot as plt
+import numpy as np
+
+# make a input for if you want minutes instead of seconds or if its above a certain threshold, force it into minutes
+
 
 start_time = time.perf_counter()
 my_list = []
@@ -14,6 +19,7 @@ max_roll_counter = 0
 attempts = 1
 highest_counter = 0
 runs_completed = 0
+
 
 number = input("How high should we go today?: ")
 runs_input = input("How many runs should we do?: ")
@@ -85,6 +91,10 @@ end_time = time.perf_counter()
 elapsed_time = end_time - start_time
 average_time_list.sort()
 average_attempt_list.sort()
-print(f"\n{runs_completed} runs completed. It took '{elapsed_time:.4f}' seconds total. The average time for each run was '{sum(average_time_list) / len(average_time_list)}' The average attempt took '{int(sum(average_attempt_list) / len(average_attempt_list))}' attempts to get a perfect roll of up to {number}.")
+xpoints = np.array(average_attempt_list)
+ypoints = np.array(average_time_list)
+print(f"\n{runs_completed} runs completed. It took '{elapsed_time:.4f}' seconds total. The average time for each run was '{sum(average_time_list) / len(average_time_list)}' The average attempt took '{int(sum(average_attempt_list) / len(average_attempt_list))}' attempts to get a perfect roll of up to '{number}'.")
 print(f"The quickest attempt took '{average_time_list[0]}' while the longest attempt took '{average_time_list[-1]}'.")
 print(f"The least attempts taken in a run was '{average_attempt_list[0]}' while the most attempts taken was '{average_attempt_list[-1]}'.\n")
+plt.plot(xpoints, ypoints)
+plt.show()
