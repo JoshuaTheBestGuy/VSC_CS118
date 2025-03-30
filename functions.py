@@ -17,13 +17,3 @@ def summation(a:int, b:int) -> bool:
     for i in range(a,b+1):
         result += i
     return result
-
-def isnumber(x:int) -> int:
-    while True:
-        if str(x).isnumeric() == True:
-            x = int(x)
-            break
-        else:
-            print(f"{x} is not a valid number!")
-            x = input("Please enter a number: ")
-    return x

@@ -7,8 +7,6 @@ import time
 import matplotlib.pyplot as plt
 import numpy as np
 
-# make a input for if you want minutes instead of seconds or if its above a certain threshold, force it into minutes
-
 
 start_time = time.perf_counter()
 my_list = []
@@ -69,7 +67,7 @@ while runs_completed < runs_input:
                 if max_roll_counter > highest_counter:
                     highest_counter = max_roll_counter
                 if do_print is True:
-                    print(f"You rolled {dice}! That is not a perfect combination! You got up to {max_roll_counter}... so close.. or not? The highest you got to was {highest_counter}.")
+                    print(f"You rolled {dice}! That is not a perfect combination! The highest you got to was {highest_counter}.")
                 attempts += 1
                 my_list = []
                 current_counter = 1
@@ -93,8 +91,11 @@ average_time_list.sort()
 average_attempt_list.sort()
 xpoints = np.array(average_attempt_list)
 ypoints = np.array(average_time_list)
-print(f"\n{runs_completed} runs completed. It took '{elapsed_time:.4f}' seconds total. The average time for each run was '{sum(average_time_list) / len(average_time_list)}' The average attempt took '{int(sum(average_attempt_list) / len(average_attempt_list))}' attempts to get a perfect roll of up to '{number}'.")
-print(f"The quickest attempt took '{average_time_list[0]}' while the longest attempt took '{average_time_list[-1]}'.")
+if elapsed_time > 60:
+    print(f"\n{runs_completed} runs completed. It took '{elapsed_time:.4f / 60}' minutes total. The average time for each run was '{sum(average_time_list) / len(average_time_list)}' seconds. The average attempt took '{int(sum(average_attempt_list) / len(average_attempt_list))}' attempts to get a perfect roll of up to '{number}'.")
+else: 
+    print(f"\n{runs_completed} runs completed. It took '{elapsed_time:.4f}' seconds total. The average time for each run was '{sum(average_time_list) / len(average_time_list)}' seconds. The average attempt took '{int(sum(average_attempt_list) / len(average_attempt_list))}' attempts to get a perfect roll of up to '{number}'.")
+print(f"The quickest attempt took '{average_time_list[0]}' seconds while the longest attempt took '{average_time_list[-1]}' seconds.")
 print(f"The least attempts taken in a run was '{average_attempt_list[0]}' while the most attempts taken was '{average_attempt_list[-1]}'.\n")
 plt.plot(xpoints, ypoints)
 plt.show()

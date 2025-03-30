@@ -443,14 +443,3 @@ while len(my_set) < 6:
     my_set.add(dice)
 print(f"Needed '{counter}' rolls.")
 """
-
-
-"""
-Function time!
-"""
-
-from functions import isnumber
-
-x = input("Enter a number: ")
-isnumber(x)
-print(x)
