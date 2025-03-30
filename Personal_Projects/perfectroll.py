@@ -91,10 +91,7 @@ average_time_list.sort()
 average_attempt_list.sort()
 xpoints = np.array(average_attempt_list)
 ypoints = np.array(average_time_list)
-if elapsed_time > 60:
-    print(f"\n{runs_completed} runs completed. It took '{elapsed_time:.4f / 60}' minutes total. The average time for each run was '{sum(average_time_list) / len(average_time_list)}' seconds. The average attempt took '{int(sum(average_attempt_list) / len(average_attempt_list))}' attempts to get a perfect roll of up to '{number}'.")
-else: 
-    print(f"\n{runs_completed} runs completed. It took '{elapsed_time:.4f}' seconds total. The average time for each run was '{sum(average_time_list) / len(average_time_list)}' seconds. The average attempt took '{int(sum(average_attempt_list) / len(average_attempt_list))}' attempts to get a perfect roll of up to '{number}'.")
+print(f"\n{runs_completed} runs completed. It took '{elapsed_time:.4f}' seconds total. The average time for each run was '{sum(average_time_list) / len(average_time_list)}' seconds. The average attempt took '{int(sum(average_attempt_list) / len(average_attempt_list))}' attempts to get a perfect roll of up to '{number}'.")
 print(f"The quickest attempt took '{average_time_list[0]}' seconds while the longest attempt took '{average_time_list[-1]}' seconds.")
 print(f"The least attempts taken in a run was '{average_attempt_list[0]}' while the most attempts taken was '{average_attempt_list[-1]}'.\n")
 plt.plot(xpoints, ypoints)
