@@ -101,6 +101,7 @@ while True:
                 user_money -= bet
                 break
 
+
     while len(user_cards) < 2:
         last_card = randint(1,13)
         while True: # this will check if the card is actually in the deck, if it's not it will get a new card
