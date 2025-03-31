@@ -48,8 +48,8 @@ while True:
     with open("Personal_Projects/blackjackhighscore.txt", "r+") as file:
         high_score = file.read()
         high_score = int(high_score)
-    if asked == False:
-        high_score_balance = input(f"\nWelcome to blackjack! Your current balance is {user_money}. Would you like to start with your high score balance? Yes or No: ")
+    if asked == False and high_score > 500:
+        high_score_balance = input(f"\nWelcome to blackjack! Your current balance is {user_money}. Would you like to start with your high score balance of {high_score}? Yes or No: ")
         high_score_balance = high_score_balance.lower()
         asked = True
     else:
