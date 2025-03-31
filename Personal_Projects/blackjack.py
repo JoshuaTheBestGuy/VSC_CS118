@@ -49,15 +49,15 @@ while True:
         high_score = file.read()
         high_score = int(high_score)
     if asked == False and high_score > user_money:
-        high_score_balance = input(f"\nWelcome to blackjack! Your current balance is {user_money}. Would you like to start with your high score balance of {high_score}? Yes or No: ")
+        high_score_balance = input(f"\nWelcome to blackjack! Your current balance is '{user_money}'. Would you like to start with your high score balance of '{high_score}'? Yes or No: ")
         high_score_balance = high_score_balance.lower()
         asked = True
     else:
-        print(f"\nWelcome to blackjack! Your current balance is {user_money}.")
+        print(f"\nWelcome to blackjack! Your current balance is '{user_money}'.")
     while True:
         if high_score_balance == "yes":
             user_money = high_score
-            print(f"Your new balance is {user_money}.")
+            print(f"Your new balance is '{user_money}'.")
             break
         else:
             break
@@ -155,10 +155,10 @@ while True:
     if user_value == 21:
         blackjack = True
     if blackjack == True:
-        print(f"You got {user_cards}, with a value of {user_value}. That's a blackjack, congrats!")
+        print(f"You got {user_cards}, with a value of '{user_value}'. That's a blackjack, congrats!")
         user_money += bet * 3
     if blackjack == False:
-        print(f"You begin this round with {user_cards}, with a value of {user_value}. The dealer's top card is {dealer_cards[-1]}.")
+        print(f"You begin this round with {user_cards}, with a value of '{user_value}'. The dealer's top card is {dealer_cards[-1]}.")
         if user_cards[0] == user_cards[-1] and user_money > (bet * 2):
             print(f"Split is available because you have two of the same cards!")
             can_split = True
@@ -168,7 +168,7 @@ while True:
         while True:
             if action == "stand":
                 print(f"You chose to stand. Good luck!")
-                print(f"The dealer has {dealer_cards} with a value of {dealer_value}.")
+                print(f"The dealer has {dealer_cards} with a value of '{dealer_value}'.")
                 while True:
                     if dealer_value > 21:
                         dealer_deck_values["A"] = 1
@@ -214,7 +214,7 @@ while True:
                                 dealer_cards.append(last_card)
                                 dealer_value += dealer_deck_values[(last_card)]
                                 deck[(last_card)] -= 1
-                    print(f"The dealer got a {last_card}, for a total value of {dealer_value}.")
+                    print(f"The dealer got a {last_card}, for a total value of '{dealer_value}'.")
                 break
             elif action == "hit" or hit_again == True:
                 while True:
@@ -226,7 +226,7 @@ while True:
                                 user_value -= 10
                                 user_changed = True
                         if user_value > 21:
-                            print(f"You went over '21' and busted with a value of {user_value}.")
+                            print(f"You went over '21' and busted with a value of '{user_value}'.")
                             break
                     elif user_value == 21:
                         print(f"You hit '21', good luck!")
@@ -272,7 +272,7 @@ while True:
                                         user_changed = True
                                 if user_value > 21:
                                     user_bust = True
-                            print(f"You got a {last_card}, the values of your cards is {user_value}.")
+                            print(f"You got a {last_card}, the values of your cards is '{user_value}'.")
                         if user_value < 21:
                             user_bust = False
                         elif user_value > 21:
@@ -333,9 +333,9 @@ while True:
                                         user_changed = True
                                 if user_value > 21:
                                     user_bust = True
-                                    print(f"You got a {last_card}, the values of your cards is {user_value}.")
+                                    print(f"You got a {last_card}, the values of your cards is '{user_value}'.")
                                     break
-                            print(f"You got a {last_card}, the values of your cards is {user_value}.")
+                            print(f"You got a '{last_card}', the values of your cards is '{user_value}'.")
                             if user_value < 21:
                                 user_bust = False
                             elif user_value > 21:
@@ -357,7 +357,7 @@ while True:
                                     hit_again = input("Would you like to hit again? Yes or No: ")
                                     hit_again = hit_again.lower()
                         while hit_again == False and done_hitting == True:
-                            print(f"The dealer has {dealer_cards} with a value of {dealer_value}.")
+                            print(f"The dealer has {dealer_cards} with a value of '{dealer_value}'.")
                             while True:
                                 if dealer_value > 21:
                                     dealer_deck_values["A"] = 1
@@ -404,7 +404,7 @@ while True:
                                             dealer_cards.append(last_card)
                                             dealer_value += dealer_deck_values[(last_card)]
                                             deck[(last_card)] -= 1
-                                    print(f"The dealer got a {last_card}, for a total value of {dealer_value}.")
+                                    print(f"The dealer got a '{last_card}', for a total value of '{dealer_value}'.")
                                 
                             break
                         break
@@ -453,7 +453,7 @@ while True:
                             user_changed = True
                     if user_value > 21:
                         user_bust = True
-                print(f"You got a {last_card}, the values of your cards is {user_value}.")
+                print(f"You got a {last_card}, the values of your cards is '{user_value}'.")
                 if user_value < 21:
                     user_bust = False
                 elif user_value > 21:
@@ -461,7 +461,7 @@ while True:
                     break
                 elif user_value == 21:
                     break
-                print(f"The dealer has {dealer_cards} with a value of {dealer_value}.")
+                print(f"The dealer has {dealer_cards} with a value of '{dealer_value}'.")
                 while True:
                     if dealer_value > 21:
                         dealer_deck_values["A"] = 1
@@ -507,7 +507,7 @@ while True:
                                 dealer_cards.append(last_card)
                                 dealer_value += dealer_deck_values[(last_card)]
                                 deck[(last_card)] -= 1
-                    print(f"The dealer got a {last_card}, for a total value of {dealer_value}.")
+                    print(f"The dealer got a '{last_card}', for a total value of '{dealer_value}'.")
                 break
             elif action == "split" and can_split == True:
                 print(f"You chose to split {user_cards}.")
@@ -519,7 +519,7 @@ while True:
                 user_money -= bet
                 hand1_bet = bet
                 hand2_bet = bet
-                print(f"Let's start with your first card of {hand1}, with a value of {hand1_value}. Time for your first card....")
+                print(f"Let's start with your first card of {hand1}, with a value of '{hand1_value}'. Time for your first card....")
                 for i in range(1,2):
                     last_card = randint(1,13)
                     while True: # this will check if the card is actually in the deck, if it's not it will get a new card
@@ -560,7 +560,7 @@ while True:
                                 hand1_changed = True
                         if hand1_value > 21:
                             hand1_bust = True
-                    print(f"You got a {last_card}, the values of your cards is {hand1_value}.")
+                    print(f"You got a {last_card}, the values of your cards is '{hand1_value}'.")
                 if hand1_value < 21:
                     hand1_bust = False
                 elif hand1_value > 21:
@@ -621,9 +621,9 @@ while True:
                                 hand1_changed = True
                         if hand1_value > 21:
                             hand1_bust = True
-                            print(f"You got a {last_card}, the values of your cards is {hand1_value}.")
+                            print(f"You got a '{last_card}', the values of your cards is '{hand1_value}'.")
                             break
-                    print(f"You got a {last_card}, the values of your cards is {hand1_value}.")
+                    print(f"You got a '{last_card}', the values of your cards is '{hand1_value}'.")
                     if hand1_value < 21:
                         hand1_bust = False
                     elif hand1_value > 21:
@@ -685,7 +685,7 @@ while True:
                                 hand2_changed = True
                         if hand2_value > 21:
                             hand2_bust = True
-                    print(f"You got a {last_card}, the values of your cards is {hand2_value}.")
+                    print(f"You got a {last_card}, the values of your cards is '{hand2_value}'.")
                 if hand2_value < 21:
                     hand2_bust = False
                 elif hand2_value > 21:
@@ -746,9 +746,9 @@ while True:
                                 hand2_changed = True
                         if hand2_value > 21:
                             hand2_bust = True
-                            print(f"You got a {last_card}, the values of your cards is {hand2_value}.")
+                            print(f"You got a '{last_card}', the values of your cards is '{hand2_value}'.")
                             break
-                    print(f"You got a {last_card}, the values of your cards is {hand2_value}.")
+                    print(f"You got a '{last_card}', the values of your cards is '{hand2_value}'.")
                     if hand2_value < 21:
                         hand2_bust = False
                     elif hand2_value > 21:
@@ -770,7 +770,7 @@ while True:
                             hit_again = input("Would you like to hit again? Yes or No: ")
                             hit_again = hit_again.lower()
                 while hit_again == False and done_hitting_hand2 == True and done_hitting_hand1 == True:
-                            print(f"The dealer has {dealer_cards} with a value of {dealer_value}.")
+                            print(f"The dealer has '{dealer_cards}' with a value of '{dealer_value}'.")
                             while True:
                                 if dealer_value > 21:
                                     dealer_deck_values["A"] = 1
@@ -817,7 +817,7 @@ while True:
                                             dealer_cards.append(last_card)
                                             dealer_value += dealer_deck_values[(last_card)]
                                             deck[(last_card)] -= 1
-                                    print(f"The dealer got a {last_card}, for a total value of {dealer_value}.")
+                                    print(f"The dealer got a '{last_card}', for a total value of '{dealer_value}'.")
                                 
                             break
                 break
@@ -826,53 +826,53 @@ while True:
                 action = input("Would you like to stand, hit, double-down, or split?: ")
                 action = action.lower()
         if dealer_value > 21 and did_split == False:
-            print(f"\nYou won! You had a value of {user_value} and the dealer had a value of {dealer_value}.")
+            print(f"\nYou won! You had a value of '{user_value}' and the dealer had a value of '{dealer_value}'.")
             user_money += bet * 2
         elif user_value > 21 and did_split == False:
-            print(f"\nYou lost! You had a value of {user_value} and the dealer had a value of {dealer_value}.")
+            print(f"\nYou lost! You had a value of '{user_value}' and the dealer had a value of '{dealer_value}'.")
         elif user_value == dealer_value and did_split == False:
-            print(f"\nYou tied with the dealer! You had a value of {user_value} and the dealer had a value of {dealer_value}.")
+            print(f"\nYou tied with the dealer! You had a value of '{user_value}' and the dealer had a value of '{dealer_value}'.")
             user_money += bet
         elif user_value > dealer_value and did_split == False:
-            print(f"\nYou won! You had a value of {user_value} and the dealer had a value of {dealer_value}.")
+            print(f"\nYou won! You had a value of '{user_value}' and the dealer had a value of '{dealer_value}'.")
             user_money += bet * 2
         elif user_value < dealer_value and did_split == False:
-            print(f"\nYou lost! You had a value of {user_value} and the dealer had a value of {dealer_value}.")
+            print(f"\nYou lost! You had a value of '{user_value}' and the dealer had a value of '{dealer_value}'.")
 
         if dealer_value > 21 and did_split == True:
             if hand1_bust == False:
-                print(f"\nYou won your first hand! You had a value of {hand1_value} and the dealer had a value of {dealer_value}.")
+                print(f"\nYou won your first hand! You had a value of '{hand1_value}' and the dealer had a value of '{dealer_value}'.")
                 user_money += hand1_bet * 2
                 finished_hand1 = True
             if hand2_bust == False:
-                print(f"\nYou won your second hand! You had a value of {hand2_value} and the dealer had a value of {dealer_value}.")
+                print(f"\nYou won your second hand! You had a value of '{hand2_value}' and the dealer had a value of '{dealer_value}'.")
                 user_money += hand2_bet * 2
                 finished_hand2 = True
         if hand1_bust == True and did_split == True and finished_hand1 == False:
-            print(f"\nYou lost your first hand! You had a value of {hand1_value} and the dealer had a value of {dealer_value}.")
+            print(f"\nYou lost your first hand! You had a value of '{hand1_value}' and the dealer had a value of '{dealer_value}'.")
             finished_hand1 = True
         if hand2_bust == True and did_split == True and finished_hand2 == False:
-            print(f"\nYou lost your second hand! You had a value of {hand2_value} and the dealer had a value of {dealer_value}.")
+            print(f"\nYou lost your second hand! You had a value of '{hand2_value}' and the dealer had a value of '{dealer_value}'.")
             finished_hand2 = True
         if hand1_value == dealer_value and did_split == True and finished_hand1 == False:
-            print(f"\nYou tied with the dealer on your first hand! You had a value of {hand1_value} and the dealer had a value of {dealer_value}.")
+            print(f"\nYou tied with the dealer on your first hand! You had a value of '{hand1_value}' and the dealer had a value of '{dealer_value}'.")
             user_money += bet
             finished_hand1 = True
         if hand2_value == dealer_value and did_split == True and finished_hand2 == False:
-            print(f"\nYou tied with the dealer on your second hand! You had a value of {hand2_value} and the dealer had a value of {dealer_value}.")
+            print(f"\nYou tied with the dealer on your second hand! You had a value of '{hand2_value}' and the dealer had a value of '{dealer_value}'.")
             user_money += bet
             finished_hand2 = True
         if hand1_value > dealer_value and did_split == True and finished_hand1 == False:
-            print(f"\nYou won your first hand! You had a value of {hand1_value} and the dealer had a value of {dealer_value}.")
+            print(f"\nYou won your first hand! You had a value of '{hand1_value}' and the dealer had a value of '{dealer_value}'.")
             user_money += bet * 2
             finished_hand1 = True
         if hand2_value > dealer_value and did_split == True and finished_hand2 == False:
-            print(f"\nYou won your second hand! You had a value of {hand2_value} and the dealer had a value of {dealer_value}.")
+            print(f"\nYou won your second hand! You had a value of '{hand2_value}' and the dealer had a value of '{dealer_value}'.")
             user_money += bet * 2
             finished_hand2 = True
         if hand1_value < dealer_value and did_split == True and finished_hand1 == False:
-            print(f"\nYou lost your first hand! You had a value of {hand1_value} and the dealer had a value of {dealer_value}.")
+            print(f"\nYou lost your first hand! You had a value of '{hand1_value}' and the dealer had a value of '{dealer_value}'.")
             finished_hand1 = True
         if hand2_value < dealer_value and did_split == True and finished_hand2 == False:
-            print(f"\nYou lost your second hand! You had a value of {hand2_value} and the dealer had a value of {dealer_value}.")
+            print(f"\nYou lost your second hand! You had a value of '{hand2_value}' and the dealer had a value of '{dealer_value}'.")
             finished_hand2 = True
