@@ -443,3 +443,27 @@ while len(my_set) < 6:
     my_set.add(dice)
 print(f"Needed '{counter}' rolls.")
 """
+
+"""
+Practice with functions
+"""
+
+
+def max_of_three(x:int, y:int, z:int) -> int:
+    """ This function will return the max value of three values """
+    lst = [x,y,z]
+    return max(lst)
+
+def multiply(lst:list[int]) -> int:
+    """ This function will multiply all the intergers in a list and return the result """
+    result = 1
+    for i in lst:
+        result *= i
+    return result if lst else 0
+
+def squared(lst:list[int]) -> list[int]:
+    """ This function will square all the intergers in a list and return a new list with those squared values """
+    squared_list = []
+    for i in lst:
+        squared_list.append(i*i)
+    return squared_list
