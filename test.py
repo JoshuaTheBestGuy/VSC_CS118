@@ -448,7 +448,7 @@ print(f"Needed '{counter}' rolls.")
 Practice with functions
 """
 
-
+'''
 def max_of_three(x:int, y:int, z:int) -> int:
     """ This function will return the max value of three values """
     lst = [x,y,z]
@@ -467,3 +467,6 @@ def squared(lst:list[int]) -> list[int]:
     for i in lst:
         squared_list.append(i*i)
     return squared_list
+'''
+
+
