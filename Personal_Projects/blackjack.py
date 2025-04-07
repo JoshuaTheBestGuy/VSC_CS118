@@ -43,7 +43,6 @@ while True:
     done_hitting_hand2 = False
     dont_hitting = False
     high_score_balance = False
-    hit_again = "no"
     
     with open("Personal_Projects/blackjackhighscore.txt", "r+") as file:
         high_score = file.read()
@@ -285,9 +284,11 @@ while True:
                         hit_again = hit_again.lower()
                         while True:
                             if hit_again == "no":
+                                hit_again = False
                                 done_hitting = True
                                 break
                             elif hit_again == "yes":
+                                hit_again = True
                                 done_hitting = False
                                 break
                             else:
@@ -349,64 +350,67 @@ while True:
                             while True:
                                 if hit_again == "no":
                                     done_hitting = True
+                                    hit_again = False
                                     break
                                 elif hit_again == "yes":
                                     done_hitting = False
+                                    hit_again = True
                                     break
                                 else:
                                     print(f"Your action of '{hit_again}' is not a valid action.")
                                     hit_again = input("Would you like to hit again? Yes or No: ")
                                     hit_again = hit_again.lower()
-                        while hit_again == False and done_hitting == True:
-                            print(f"The dealer has {dealer_cards} with a value of '{dealer_value}'.")
+                        if done_hitting == True and hit_again == False:
                             while True:
-                                if dealer_value > 21:
-                                    dealer_deck_values["A"] = 1
-                                    if dealer_changed == False:
-                                        if "A" in dealer_cards:
-                                            dealer_value -= 10
-                                            dealer_changed = True
+                                print(f"The dealer has {dealer_cards} with a value of '{dealer_value}'.")
+                                while True:
                                     if dealer_value > 21:
-                                        print("The dealer busted!")
+                                        dealer_deck_values["A"] = 1
+                                        if dealer_changed == False:
+                                            if "A" in dealer_cards:
+                                                dealer_value -= 10
+                                                dealer_changed = True
+                                        if dealer_value > 21:
+                                            print("The dealer busted!")
+                                            break
+                                    elif dealer_value >= 17:
+                                        print("The dealer must stand, good luck!")
                                         break
-                                elif dealer_value >= 17:
-                                    print("The dealer must stand, good luck!")
-                                    break
-                                if hit_again == False:
-                                    for i in range(1,2):
-                                        last_card = randint(1,13)
-                                        while True: # this will check if the card is actually in the deck, if it's not it will get a new card
-                                            if deck[(last_card)] > 0:
-                                                break
+                                    if hit_again == False:
+                                        for i in range(1,2):
+                                            last_card = randint(1,13)
+                                            while True: # this will check if the card is actually in the deck, if it's not it will get a new card
+                                                if deck[(last_card)] > 0:
+                                                    break
+                                                else:
+                                                    last_card = randint(1,13)
+                                            # these next few if / elif statements will give you what card you got and remove it from the deck
+                                            if last_card == 1: 
+                                                dealer_cards.append("A")
+                                                dealer_value += dealer_deck_values["A"]
+                                                deck[1] -= 1
+                                                last_card = "A"
+                                            elif last_card == 11:
+                                                dealer_cards.append("J")
+                                                dealer_value += dealer_deck_values["J"]
+                                                deck[11] -= 1
+                                                last_card = "J"
+                                            elif last_card == 12:
+                                                dealer_cards.append("Q")
+                                                dealer_value += dealer_deck_values["Q"]
+                                                deck[12] -= 1
+                                                last_card = "Q"
+                                            elif last_card == 13:
+                                                dealer_cards.append("K")
+                                                dealer_value += dealer_deck_values["K"]
+                                                deck[13] -= 1
+                                                last_card = "K"
                                             else:
-                                                last_card = randint(1,13)
-                                        # these next few if / elif statements will give you what card you got and remove it from the deck
-                                        if last_card == 1: 
-                                            dealer_cards.append("A")
-                                            dealer_value += dealer_deck_values["A"]
-                                            deck[1] -= 1
-                                            last_card = "A"
-                                        elif last_card == 11:
-                                            dealer_cards.append("J")
-                                            dealer_value += dealer_deck_values["J"]
-                                            deck[11] -= 1
-                                            last_card = "J"
-                                        elif last_card == 12:
-                                            dealer_cards.append("Q")
-                                            dealer_value += dealer_deck_values["Q"]
-                                            deck[12] -= 1
-                                            last_card = "Q"
-                                        elif last_card == 13:
-                                            dealer_cards.append("K")
-                                            dealer_value += dealer_deck_values["K"]
-                                            deck[13] -= 1
-                                            last_card = "K"
-                                        else:
-                                            dealer_cards.append(last_card)
-                                            dealer_value += dealer_deck_values[(last_card)]
-                                            deck[(last_card)] -= 1
-                                    print(f"The dealer got a '{last_card}', for a total value of '{dealer_value}'.")
-                                
+                                                dealer_cards.append(last_card)
+                                                dealer_value += dealer_deck_values[(last_card)]
+                                                deck[(last_card)] -= 1
+                                        print(f"The dealer got a '{last_card}', for a total value of '{dealer_value}'.")
+                                break    
                             break
                         break
                     break

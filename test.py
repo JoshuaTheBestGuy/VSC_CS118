@@ -470,3 +470,39 @@ def squared(lst:list[int]) -> list[int]:
 '''
 
 
+"""
+Functions calling themselves
+"""
+
+'''
+def factorial(x:int) -> int:
+    #print(f"func called with: {x}")
+    if x == 0:
+        return 1
+    result = x * factorial(x-1)
+    #print(f"func called with {x} returns {result}")
+    return result
+
+def is_palindrome(s: str) -> bool:
+    s = s.strip()
+    s = s.lower()
+    if len(s) <= 1:
+        return True
+    elif s[0] != s[-1]:
+        return False
+    else:
+        return is_palindrome(s[1:-1])
+
+def r_sum(x:int) -> int:
+    """ Returns the sum of all intergers 1 to x inclusivly. """
+    if x == 1:
+        return 1
+    result = x + r_sum(x-1)
+    return result
+
+numbers = [i for i in range (1,1001)]
+numbers = list(range(1,1001)) # same effect
+
+numbers = [3, 5, 45, 97, 32, 22, 10, 19, 39, 43]
+result = [i for i in numbers if i % 2 == 1]
+'''
