@@ -506,3 +506,23 @@ numbers = list(range(1,1001)) # same effect
 numbers = [3, 5, 45, 97, 32, 22, 10, 19, 39, 43]
 result = [i for i in numbers if i % 2 == 1]
 '''
+
+
+"""
+Learning about mapping
+"""
+
+'''
+from math import sqrt
+
+words = ["231", "20", "-45", "99"]
+sq = list(map(sqrt, map(abs, map(int, words))))
+print(sq)
+'''
+
+
+"""
+
+"""
+
+
