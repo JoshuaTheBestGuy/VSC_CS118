@@ -522,7 +522,34 @@ print(sq)
 
 
 """
-
+Reading a CSV file
 """
 
+'''
+#def my_filter(k:int) -> bool:
+#    return k > 15
 
+def get_numbers(file_name:str) -> list[int]:
+    """ Reads a file containing CSV """
+    try:
+        with open(file_name) as file:
+            los = file.read().strip().split(',')
+            loi = list(map(int,los))
+            fl = filter(lambda k:k > 15,loi)
+            return sorted(fl)
+    except OSError as err:
+        print(err)
+        exit(1)
+print(get_numbers("numbers.csv"))
+'''
+
+"""
+Practice
+"""
+
+'''
+loi = [1, 2, 1, 2]
+
+print(list(map(lambda x: x*3,loi)))
+print([i*3 for i in loi])
+'''
