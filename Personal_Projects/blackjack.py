@@ -42,9 +42,10 @@ while True:
     finished_hand2 = False
     done_hitting_hand1 = False
     done_hitting_hand2 = False
-    dont_hitting = False
+    done_hitting = False
     high_score_balance = False
     hit_again = False
+    dealer_done = False
     
     with open("Personal_Projects/blackjackhighscore.txt", "r+") as file:
         high_score = file.read()
@@ -149,7 +150,7 @@ while True:
                     print(f"The dealer got a {last_card}, for a total value of '{dealer_value}'.")
                 break
             elif action == "hit" or hit_again == True:
-                while True:
+                while user_bust == False and done_hitting == False:
                     print(f"You chose to hit. Good luck!")
                     if user_value > 21:
                         user_deck_values["A"] = 1
@@ -196,46 +197,10 @@ while True:
                                 print(f"Your action of '{hit_again}' is not a valid action.")
                                 hit_again = input("Would you like to hit again? Yes or No: ")
                                 hit_again = hit_again.lower()
-                        while user_bust == False and done_hitting == False:
-                            deck, user_cards, last_card, user_value, user_deck_values = hit(deck, user_cards, user_value, user_deck_values, 1)
-                            if user_value > 21:
-                                user_deck_values["A"] = 1
-                                if user_changed == False:
-                                    if "A" in user_cards:
-                                        user_value -= 10
-                                        user_changed = True
-                                if user_value > 21:
-                                    user_bust = True
-                                    print(f"You got a {last_card}, the values of your cards is '{user_value}'.")
-                                    break
-                            print(f"You got a '{last_card}', the values of your cards is '{user_value}'.")
-                            if user_value < 21:
-                                user_bust = False
-                            elif user_value > 21:
-                                user_bust = True
-                                break
-                            elif user_value == 21:
-                                break
-                            hit_again = input("Would you like to hit again? Yes or No: ")
-                            hit_again = hit_again.lower()
-                            while True:
-                                if hit_again == "no":
-                                    done_hitting = True
-                                    hit_again = False
-                                    break
-                                elif hit_again == "yes":
-                                    done_hitting = False
-                                    hit_again = True
-                                    break
-                                else:
-                                    print(f"Your action of '{hit_again}' is not a valid action.")
-                                    hit_again = input("Would you like to hit again? Yes or No: ")
-                                    hit_again = hit_again.lower()
                         if done_hitting == True and hit_again == False:
-                            while True:
+                            while dealer_done == False:
                                 print(f"The dealer has {dealer_cards} with a value of '{dealer_value}'.")
-                                deck, dealer_cards, last_card, dealer_value, dealer_deck_values = hit(deck, dealer_cards, dealer_value, dealer_deck_values, 1)
-                                while True: # this is broken rn, but i don't have the brain to fix it rn, goodluck future me
+                                while dealer_done == False: # this is broken rn, but i don't have the brain to fix it rn, goodluck future me
                                     if dealer_value > 21:
                                         dealer_deck_values["A"] = 1
                                         if dealer_changed == False:
@@ -243,23 +208,19 @@ while True:
                                                 dealer_value -= 10
                                                 dealer_changed = True
                                         if dealer_value > 21:
-                                            print(f"The dealer got a '{last_card}', for a total value of '{dealer_value}'.")
                                             print(f"The dealer busted!")
                                             dealer_bust = True
                                             break
-                                    elif dealer_value >= 17 and dealer_bust == False:
-                                        print(f"The dealer got a '{last_card}', for a total value of '{dealer_value}'.")
+                                    if dealer_value >= 17 and dealer_bust == False:
                                         print("The dealer must stand, good luck!")
+                                        dealer_done = True
                                         break
                                     elif dealer_value == 21:
-                                        print(f"The dealer got a '{last_card}', for a total value of '{dealer_value}'.")
                                         print("The dealer must stand, good luck!")
+                                        dealer_done = True
                                         break
-                                    elif dealer_value < 21:
-                                        print(f"The dealer got a '{last_card}', for a total value of '{dealer_value}'.")
-                                    if hit_again == False:
-                                        deck, dealer_cards, last_card, dealer_value, dealer_deck_values = hit(deck, dealer_cards, dealer_value, dealer_deck_values, 1)
-                                        print(f"The dealer got a '{last_card}', for a total value of '{dealer_value}'.")
+                                    deck, dealer_cards, last_card, dealer_value, dealer_deck_values = hit(deck, dealer_cards, dealer_value, dealer_deck_values, 1)
+                                    print(f"The dealer got a '{last_card}', for a total value of '{dealer_value}'.")
                                 break    
                             break
                         break
