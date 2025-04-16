@@ -455,14 +455,14 @@ def max_of_three(x:int, y:int, z:int) -> int:
     return max(lst)
 
 def multiply(lst:list[int]) -> int:
-    """ This function will multiply all the intergers in a list and return the result """
+    """ This function will multiply all the integers in a list and return the result """
     result = 1
     for i in lst:
         result *= i
     return result if lst else 0
 
 def squared(lst:list[int]) -> list[int]:
-    """ This function will square all the intergers in a list and return a new list with those squared values """
+    """ This function will square all the integers in a list and return a new list with those squared values """
     squared_list = []
     for i in lst:
         squared_list.append(i*i)
@@ -494,7 +494,7 @@ def is_palindrome(s: str) -> bool:
         return is_palindrome(s[1:-1])
 
 def r_sum(x:int) -> int:
-    """ Returns the sum of all intergers 1 to x inclusivly. """
+    """ Returns the sum of all integers 1 to x inclusively. """
     if x == 1:
         return 1
     result = x + r_sum(x-1)
@@ -552,4 +552,32 @@ loi = [1, 2, 1, 2]
 
 print(list(map(lambda x: x*3,loi)))
 print([i*3 for i in loi])
+'''
+
+
+"""
+Functions and more!
+"""
+
+'''
+def item_sum(lst: list) -> int:
+    """ Sum of all integers in the list(s) """
+    total = 0
+    for i in lst:
+        total += i if isinstance(i, int) else item_sum(i)
+    return total
+print(item_sum([1, 2, 3, [10, 20, 30, [100, 200]], 4, 5]))
+
+def is_power_of_three(n: int) -> bool:
+    pot = [1, 3]
+    while pot[-1] <= n:
+        pot.append(pot[-1]*3)
+    return n in pot
+print(is_power_of_three(27))
+
+def dict_transform(d: dict, f: callable) -> dict:
+    for k, v in d.items():
+        d[k] = f(v)
+    return d
+print(dict_transform({'a': 2, 'b':3}, lambda x: x*2))
 '''
