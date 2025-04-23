@@ -581,3 +581,25 @@ def dict_transform(d: dict, f: callable) -> dict:
     return d
 print(dict_transform({'a': 2, 'b':3}, lambda x: x*2))
 '''
+
+
+"""
+Global variables?
+"""
+
+'''
+def fibonacci(x: int) -> int:
+    """ Returns the xth fibonacci number """
+    global call_counter
+    call_counter += 1
+    return x if x <= 1 else fibonacci(x - 1) + fibonacci(x - 2)
+
+call_counter = 0
+print(fibonacci(20))
+print(f"The function 'fibonacci' was called '{call_counter:,}' times.")
+'''
+
+"""
+
+"""
+

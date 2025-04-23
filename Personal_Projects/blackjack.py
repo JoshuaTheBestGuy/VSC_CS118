@@ -200,7 +200,7 @@ while True:
                         if done_hitting == True and hit_again == False:
                             while dealer_done == False:
                                 print(f"The dealer has {dealer_cards} with a value of '{dealer_value}'.")
-                                while dealer_done == False: # this is broken rn, but i don't have the brain to fix it rn, goodluck future me
+                                while dealer_done == False:
                                     if dealer_value > 21:
                                         dealer_deck_values["A"] = 1
                                         if dealer_changed == False:

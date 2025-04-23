@@ -1,0 +1,94 @@
+{
+  "@context": [
+    "https://geojson.org/geojson-ld/geojson-context.jsonld",
+    {
+      "@version": "1.1",
+      "wx": "https://api.weather.gov/ontology#",
+      "s": "https://schema.org/",
+      "geo": "http://www.opengis.net/ont/geosparql#",
+      "unit": "http://codes.wmo.int/common/unit/",
+      "@vocab": "https://api.weather.gov/ontology#",
+      "geometry": {
+        "@id": "s:GeoCoordinates",
+        "@type": "geo:wktLiteral"
+      },
+      "city": "s:addressLocality",
+      "state": "s:addressRegion",
+      "distance": {
+        "@id": "s:Distance",
+        "@type": "s:QuantitativeValue"
+      },
+      "bearing": {
+        "@type": "s:QuantitativeValue"
+      },
+      "value": {
+        "@id": "s:value"
+      },
+      "unitCode": {
+        "@id": "s:unitCode",
+        "@type": "@id"
+      },
+      "forecastOffice": {
+        "@type": "@id"
+      },
+      "forecastGridData": {
+        "@type": "@id"
+      },
+      "publicZone": {
+        "@type": "@id"
+      },
+      "county": {
+        "@type": "@id"
+      }
+    }
+  ],
+  "id": "https://api.weather.gov/points/34.54,-112.4685",
+  "type": "Feature",
+  "geometry": {
+    "type": "Point",
+    "coordinates": [
+      -112.4685,
+      34.54
+    ]
+  },
+  "properties": {
+    "@id": "https://api.weather.gov/points/34.54,-112.4685",
+    "@type": "wx:Point",
+    "cwa": "FGZ",
+    "forecastOffice": "https://api.weather.gov/offices/FGZ",
+    "gridId": "FGZ",
+    "gridX": 41,
+    "gridY": 64,
+    "forecast": "https://api.weather.gov/gridpoints/FGZ/41,64/forecast",
+    "forecastHourly": "https://api.weather.gov/gridpoints/FGZ/41,64/forecast/hourly",
+    "forecastGridData": "https://api.weather.gov/gridpoints/FGZ/41,64",
+    "observationStations": "https://api.weather.gov/gridpoints/FGZ/41,64/stations",
+    "relativeLocation": {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -112.448396,
+          34.579298
+        ]
+      },
+      "properties": {
+        "city": "Prescott",
+        "state": "AZ",
+        "distance": {
+          "unitCode": "wmoUnit:m",
+          "value": 4741.7189297746
+        },
+        "bearing": {
+          "unitCode": "wmoUnit:degree_(angle)",
+          "value": 202
+        }
+      }
+    },
+    "forecastZone": "https://api.weather.gov/zones/forecast/AZZ008",
+    "county": "https://api.weather.gov/zones/county/AZC025",
+    "fireWeatherZone": "https://api.weather.gov/zones/fire/AZZ108",
+    "timeZone": "America/Phoenix",
+    "radarStation": "KFSX"
+  }
+}
