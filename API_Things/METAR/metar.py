@@ -3,9 +3,9 @@ This program will read the METAR from a user inputed airport.
 Author: Joshua Hendrickson
 """
 
-from json import load, dump, loads
+from json import load, dump#, loads
 from urllib.request import urlopen
-from math import cos, sin
+#from math import cos, sin
 
 finished = False
 
@@ -37,4 +37,11 @@ for p in data:
     wind_speed = p.get("wspd")
     wind_gusts = p.get("wgst")
     wind_direction = p.get("wdir")
-print(f"\nThe RAW metar is {raw_metar}.\nWinds are {wind_direction}° at {wind_speed} knots, with gusts of {wind_gusts} knots.")
+print(f"\nThe RAW metar is {raw_metar}.\nWinds are '{wind_direction}°' at '{wind_speed}' knots, with gusts of '{wind_gusts}' knots.")
+
+
+
+
+
+
+# https://beeware.org/
