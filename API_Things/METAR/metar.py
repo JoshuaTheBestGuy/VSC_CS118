@@ -1,5 +1,5 @@
 """
-This program will read the METAR from a user inputed airport.
+This program will read the METAR from a user inputted airport.
 Author: Joshua Hendrickson
 """
 
@@ -33,15 +33,9 @@ with open ("API_Things/METAR/result.json", "w") as file:
     dump(data, file)
 
 for p in data:
+    location = p.get("name")
     raw_metar = p.get("rawOb")
     wind_speed = p.get("wspd")
     wind_gusts = p.get("wgst")
     wind_direction = p.get("wdir")
-print(f"\nThe RAW metar is {raw_metar}.\nWinds are '{wind_direction}°' at '{wind_speed}' knots, with gusts of '{wind_gusts}' knots.")
-
-
-
-
-
-
-# https://beeware.org/
+print(f"\nHere is the METAR for {location}!\nThe RAW metar is {raw_metar}.\nWinds are '{wind_direction}°' at '{wind_speed}' knots, gusting to '{wind_gusts}' knots.")
