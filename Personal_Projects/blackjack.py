@@ -261,8 +261,8 @@ while True:
                 did_split = True
                 hand1.append(user_cards[0])
                 hand2.append(user_cards[-1])
-                hand1_value = user_value / 2
-                hand2_value = user_value / 2
+                hand1_value = user_value // 2
+                hand2_value = user_value // 2
                 user_money -= bet
                 hand1_bet = bet
                 hand2_bet = bet
