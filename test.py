@@ -603,3 +603,7 @@ print(f"The function 'fibonacci' was called '{call_counter:,}' times.")
 
 """
 
+s = 0
+for i in range(3,1,-1):
+        s-=i
+print(s)
